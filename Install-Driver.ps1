@@ -1,0 +1,2 @@
+# Gathers a list of all .inf driver files within the parent directory then installs each one
+Get-ChildItem -Path "$PSScriptRoot" -Recurse -Filter "*.inf" | ForEach-Object { PnPUtil.exe /add-driver $_.FullName /install }
